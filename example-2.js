@@ -3,7 +3,20 @@ const companies = createAll();
 
 cleanConsole(2, companies);
 console.log('---- EXAMPLE 2 --- ', 'Put here your function');
-
+// =================================================
+// Método que permite dar solución  al segundo  ejercicio
+// =================================================
+function secondExerciseSolution(companies, hasCar) {
+  let usersWithCar;
+  for (const company of companies) {
+    // Se filtra solo los usuarios que tienen carro
+    usersWithCar = [...company.users.filter( (x) => x.car === hasCar)];
+    company.usersLength = usersWithCar.length;
+    company.users = usersWithCar; // se setea el valor de los usuarios con carro
+  }
+  return companies;
+};
+console.log('** SOLUCTION EXAMPLE 2: ', secondExerciseSolution(companies, true));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
