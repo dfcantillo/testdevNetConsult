@@ -1,5 +1,6 @@
 import {cleanConsole, createAll} from './data';
-import {getNameCompanyById, deleteCompanyById, createUserInCompany, deleteUserById, transferUser} from './tools';
+import {getNameCompanyById, deleteCompanyById, createUserInCompany,
+  deleteUserById, transferUser, putUser, pathCompany} from './tools';
 
 
 const companies = createAll();
@@ -10,12 +11,17 @@ const idUser = companies[idCompany].users[0].id;
 cleanConsole(7, companies);
 console.log('---- EXAMPLE 7 part 1 --- Name company: ', getNameCompanyById(idCompany, companies));
 console.log('---- EXAMPLE 7 part 2 --- New object companies', deleteCompanyById(idCompany, companies));
-console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 3 --- Path company', pathCompany(idCompany,
+    {name: 'Develop', isOpen: true, usersLength: 50}, companies));
 console.log('---- EXAMPLE 7 part 4 --- New User', createUserInCompany(idCompany, companies, dataNewUser) );
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 6 ---  User Delete:. ', deleteUserById(idCompany, idUser, companies));
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 8 --- put user: ',
+    putUser(idCompany, companies[0].users[0].id, companies )
+        .then(( resp) => {
+          console.log('**** User update ', resp);
+        }));
 console.log('---- EXAMPLE 7 part 9 --- User Transfer:',
     transferUser(idCompany, secondIdCompany, companies[0].users[0].id, companies));
 

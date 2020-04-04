@@ -68,3 +68,35 @@ export function transferUser(firstId, secondId, idUser, companies) {
   }
   return newCompaniesT;
 }
+export function pathCompany(id, data, companies) {
+  const newCompaniesT = companies.map((company) => ({...company})); // se quita la fererencia del objecto.
+  const company = newCompaniesT.find( (company) => company.id === id);
+  if (company) {
+    company.id = Math.floor(0 + Math.random() * (1000 - 0));
+    company.name = data.name;
+    company.isOpen =data.isOpen;
+    company.usersLength = data.usersLength;
+  }
+  return company;
+}
+
+// =================================================
+// Método que permite hacer una simulación de una llada a un servidor para actualizar un usuario
+// =================================================
+export function putUser(firstId, idUser, companies) {
+  const newCompaniesT = companies.map((company) => ({...company})); // se quita la fererencia del objecto.
+  const company = newCompaniesT.find( (company) => company.id === firstId);
+  return new Promise((resolve, reject) => {
+    const user = company.users.find(( user) => user.id === idUser);
+    console.log('**** Waiting for a response fron the server', user);
+    if (user) {
+      setTimeout( () => {
+        user.firstName = 'Diego';
+        user.lastName = 'Cantillo';
+        user.age = '25';
+        user.car = true;
+        resolve(company);
+      }, 3000);
+    }
+  });
+}
