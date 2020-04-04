@@ -8,7 +8,7 @@ console.log('---- EXAMPLE 1 --- ', 'Put here your function');
 // =================================================
 // Método que permite dar solución  primer ejercicio
 // =================================================
-function soluctionFirtExercise(companies) {
+export function soluctionFirtExercise(companies) {
   for (const company of companies) {
     company.name = capitalizeInitialLatter(company.name);// Nombre capitalizado
     const users = company.users.sort( (a, b) => a.firstName > b.firstName ? 1 : -1);

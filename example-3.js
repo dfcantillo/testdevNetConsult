@@ -1,10 +1,38 @@
 import {cleanConsole, createAll} from './data';
-
+import {soluctionFirtExercise} from './example-1';
+import {capitalizeInitialLatter} from './tools';
 const companies = createAll();
 
 cleanConsole(3, companies);
 console.log('---- EXAMPLE 3 --- ', 'Put here your function');
-
+function thirdExerciseSolution(companies) {
+  let result;
+  companies = soluctionFirtExercise(companies);
+  for (const company of companies) {
+    // Nota esta solución se podria hacer con una expresión regular pero decidi utilizar el método
+    // que permite capitalizar un nombre
+    if (company.name) {
+      result = (company.name === capitalizeInitialLatter(company.name)) ? true : false;
+      if (result) {
+        // Se recorre todos los usuario validando que todos los nombre y apellido esten en mayusculas
+        company.users.forEach((user) => {
+          const firstNameCapitalize = capitalizeInitialLatter(user.firstName);
+          const lastNameCapitalize = capitalizeInitialLatter(user.lastName);
+          if (user.firstName === firstNameCapitalize && user.lastName === lastNameCapitalize ) {
+            result = true;
+          } else {
+            return false; // se finaliza el siclo si se encuentra un resultado que no tenga mayuscula
+          }
+        });
+      } else {
+        return false; // se finaliza si existe un nombre que no esta en mayuscula
+      }
+    }
+  }
+  // Validar nombre es mayuscula
+  return result;
+};
+console.log('** SOLUCTION EXAMPLE : All names are capitalized:', thirdExerciseSolution(companies, true));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
