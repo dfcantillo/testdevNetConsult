@@ -3,7 +3,18 @@ const companies = createAll();
 
 cleanConsole(4, companies);
 console.log('---- EXAMPLE 4 --- ', 'Put here your function');
-
+function fourthExerciseSolution(companies) {
+  const tabla = [];
+  for (const company of companies) {
+    company.users.forEach((user) => {
+      user.company = company.name;
+    });
+    tabla.push(...company.users); // nuevo arreglo con todos los usuarios
+  }
+  tabla.sort((a, b) => b.age - a.age ); // Ordernar por edad de mayor a menor
+  return tabla;
+};
+console.log('** SOLUCTION EXAMPLE 4: users new table: ', fourthExerciseSolution(companies));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 

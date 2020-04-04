@@ -5,6 +5,9 @@ const companies = createAll();
 
 cleanConsole(3, companies);
 console.log('---- EXAMPLE 3 --- ', 'Put here your function');
+// =================================================
+// Método que permite dar solucón al tercer ejercicio
+// =================================================
 function thirdExerciseSolution(companies) {
   let result;
   companies = soluctionFirtExercise(companies);
@@ -32,7 +35,7 @@ function thirdExerciseSolution(companies) {
   // Validar nombre es mayuscula
   return result;
 };
-console.log('** SOLUCTION EXAMPLE : All names are capitalized:', thirdExerciseSolution(companies, true));
+console.log('** SOLUCTION EXAMPLE : All names are capitalized:', thirdExerciseSolution(companies));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
