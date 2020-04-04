@@ -24,7 +24,7 @@ function solutionFifthExercise(companies) {
   data.size = users.length; // total de "users"
   data.average = Math.round(totalAges / data.size); // edad promedio redondeada;
   data.hasCar = users.filter((x) => x.car === true).length; // total de "users" propietarios de un carro
-  data.averageWithCar = Math.round(totalAgesUsersWhithCar / data.hasCar);
+  data.averageWithCar = Math.round(totalAgesUsersWhithCar / data.hasCar); // edad promedio de los "users" con un carro
   return data;
 };
 console.log('** SOLUCTION EXAMPLE 5: Data: ', solutionFifthExercise(companies));

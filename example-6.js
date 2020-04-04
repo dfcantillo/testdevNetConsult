@@ -4,7 +4,19 @@ const companies = createAll();
 
 cleanConsole(6, companies);
 console.log('---- EXAMPLE 6 --- ', 'Put here your function');
-
+function sixthExerciseSolutio(companies) {
+  const newObject = {};
+  for (const company of companies) {
+    const propertyName = '';
+    company.users.map((user) => {
+      const name = `${user.firstName}${user.lastName}` || 'Nameless';
+      propertyName = `${name}${user.age}`;
+      newObject[propertyName] = user.car;
+    });
+  }
+  return newObject;
+};
+console.log('** SOLUCTION EXAMPLE 6: New Object: ', sixthExerciseSolutio(companies));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 

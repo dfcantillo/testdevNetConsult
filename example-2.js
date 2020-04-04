@@ -8,7 +8,7 @@ console.log('---- EXAMPLE 2 --- ', 'Put here your function');
 // =================================================
 function secondExerciseSolution(companies, hasCar) {
   let usersWithCar;
-  const newCompanies = Object.assign([], companies); // se quita la fererencia del objecto.
+  const newCompanies = companies.map((company) => ({...company})); // se quita la fererencia del objecto.
   for (const company of newCompanies) {
     // Se filtra solo los usuarios que tienen carro
     usersWithCar = company.users.filter( (x) => x.car === hasCar);
