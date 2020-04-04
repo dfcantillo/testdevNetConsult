@@ -8,13 +8,15 @@ console.log('---- EXAMPLE 2 --- ', 'Put here your function');
 // =================================================
 function secondExerciseSolution(companies, hasCar) {
   let usersWithCar;
-  for (const company of companies) {
+  const newCompanies = Object.assign([], companies); // se quita la fererencia del objecto.
+  for (const company of newCompanies) {
     // Se filtra solo los usuarios que tienen carro
-    usersWithCar = [...company.users.filter( (x) => x.car === hasCar)];
+    usersWithCar = company.users.filter( (x) => x.car === hasCar);
     company.usersLength = usersWithCar.length;
     company.users = usersWithCar; // se setea el valor de los usuarios con carro
   }
-  return companies;
+  console.log('test:', newCompanies);
+  return newCompanies;
 };
 console.log('** SOLUCTION EXAMPLE 2: ', secondExerciseSolution(companies, true));
 // -----------------------------------------------------------------------------

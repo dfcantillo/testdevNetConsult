@@ -1,9 +1,33 @@
 import {cleanConsole, createAll} from './data';
+import {fourthExerciseSolution} from './example-4';
+
 const companies = createAll();
 
 cleanConsole(5, companies);
 console.log('---- EXAMPLE 5 --- ', 'Put here your function');
-
+// =================================================
+// Método que permite dar solución al quinto ejercicio
+// =================================================
+function solutionFifthExercise(companies) {
+  let totalAges = 0;
+  let totalAgesUsersWhithCar = 0;
+  const data = {size: 0, average: 0, hasCar: 0, averageWithCar: 0};
+  const users = fourthExerciseSolution(companies);
+  // users.forEach((user) => totalAges = totalAges + user.age); // se añade el total de la suma de las edades
+  // se añade el total de la suma de las edades
+  for (const user of users ) {
+    totalAges += user.age;
+    if (user.car) {
+      totalAgesUsersWhithCar += user.age;
+    }
+  }
+  data.size = users.length; // total de "users"
+  data.average = Math.round(totalAges / data.size); // edad promedio redondeada;
+  data.hasCar = users.filter((x) => x.car === true).length; // total de "users" propietarios de un carro
+  data.averageWithCar = Math.round(totalAgesUsersWhithCar / data.hasCar);
+  return data;
+};
+console.log('** SOLUCTION EXAMPLE 5: Data: ', solutionFifthExercise(companies));
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 

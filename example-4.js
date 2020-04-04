@@ -3,7 +3,10 @@ const companies = createAll();
 
 cleanConsole(4, companies);
 console.log('---- EXAMPLE 4 --- ', 'Put here your function');
-function fourthExerciseSolution(companies) {
+// =================================================
+// Método que permite dar solución al cuarto ejercicio
+// =================================================
+export function fourthExerciseSolution(companies) {
   const tabla = [];
   for (const company of companies) {
     company.users.forEach((user) => {
