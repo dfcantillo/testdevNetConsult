@@ -1,19 +1,23 @@
 import {cleanConsole, createAll} from './data';
-import {getNameCompanyById, deleteCompanyById} from './tools';
+import {getNameCompanyById, deleteCompanyById, createUserInCompany, deleteUserById, transferUser} from './tools';
 
 
 const companies = createAll();
-
+const dataNewUser = {firstName: 'Juan', lastName: 'Delegado', age: 35, car: true};
+const idCompany = companies[0].id;
+const secondIdCompany = companies[1].id;
+const idUser = companies[idCompany].users[0].id;
 cleanConsole(7, companies);
-console.log('---- EXAMPLE 7 part 1 --- Name company: ', getNameCompanyById(companies[0].id, companies));
-console.log('---- EXAMPLE 7 part 2 --- New object companies', deleteCompanyById(companies[0].id, companies));
+console.log('---- EXAMPLE 7 part 1 --- Name company: ', getNameCompanyById(idCompany, companies));
+console.log('---- EXAMPLE 7 part 2 --- New object companies', deleteCompanyById(idCompany, companies));
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 4 --- New User', createUserInCompany(idCompany, companies, dataNewUser) );
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 6 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 6 ---  User Delete:. ', deleteUserById(idCompany, idUser, companies));
 console.log('---- EXAMPLE 7 part 7 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 8 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 9 --- User Transfer:',
+    transferUser(idCompany, secondIdCompany, companies[0].users[0].id, companies));
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
