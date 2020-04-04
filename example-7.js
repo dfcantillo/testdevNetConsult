@@ -1,10 +1,12 @@
 import {cleanConsole, createAll} from './data';
+import {getNameCompanyById, deleteCompanyById} from './tools';
+
 
 const companies = createAll();
 
 cleanConsole(7, companies);
-console.log('---- EXAMPLE 7 part 1 --- ', 'Put here your function');
-console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 1 --- Name company: ', getNameCompanyById(companies[0].id, companies));
+console.log('---- EXAMPLE 7 part 2 --- New object companies', deleteCompanyById(companies[0].id, companies));
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');

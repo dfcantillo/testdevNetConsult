@@ -15,7 +15,6 @@ function secondExerciseSolution(companies, hasCar) {
     company.usersLength = usersWithCar.length;
     company.users = usersWithCar; // se setea el valor de los usuarios con carro
   }
-  console.log('test:', newCompanies);
   return newCompanies;
 };
 console.log('** SOLUCTION EXAMPLE 2: ', secondExerciseSolution(companies, true));
