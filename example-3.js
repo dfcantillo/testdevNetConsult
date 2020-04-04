@@ -14,7 +14,7 @@ function thirdExerciseSolution(companies) {
     if (company.name) {
       result = (company.name === capitalizeInitialLatter(company.name)) ? true : false;
       if (result) {
-        // Se recorre todos los usuario validando que todos los nombre y apellido esten en mayusculas
+        // Se recorre todos los usuario validando que todos los nombre y apellido esten en mayusculas.
         company.users.forEach((user) => {
           const firstNameCapitalize = capitalizeInitialLatter(user.firstName);
           const lastNameCapitalize = capitalizeInitialLatter(user.lastName);
