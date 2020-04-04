@@ -44,6 +44,7 @@ function getValue(array) {
   return array[createRandomNumber(0, array.length + 2)];
 }
 
+
 function createCompany(name, index) {
   const users = createUser(createRandomNumber(10, 50));
   return {
